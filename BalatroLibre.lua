@@ -41,13 +41,7 @@ SMODS.Joker({
     cost = 5,
     atlas = 'libre_jokers',
     pos = { x = 0, y = 0 },
-    calculate = function(self, card, context)
-        if context.end_of_round and not context.individual and not context.repetition and not context.blueprint then
-            return {
-                message = localize('k_plus_dollars'),
-                colour = G.C.MONEY,
-                dollars = card.ability.extra.money
-            }
-        end
+    calc_dollar_bonus = function(self, card)
+        return card.ability.extra.money
     end
 })
