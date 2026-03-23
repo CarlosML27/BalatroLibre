@@ -42,7 +42,7 @@ SMODS.Joker({
     atlas = 'libre_jokers',
     pos = { x = 0, y = 0 },
     calculate = function(self, card, context)
-        if context.end_of_round and context.cardarea == G.jokers and not context.blueprint then
+        if context.end_of_round and not context.individual and not context.blueprint then
             return {
                 message = localize('k_plus_dollars'),
                 colour = G.C.MONEY,
